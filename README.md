@@ -11,6 +11,8 @@
 > * 这个开关**只作用于本局**，不修改存档文件、不写内存、不改 Steam 成就状态；它用的是游戏原生的「自定义局 / 种子局」标记。
 > * 仍然建议：**动成就之前先备份存档**（`Documents/My Games/Binding of Isaac Repentance+/`）。
 
+📄 **网页版安装说明：<https://jiahuli.github.io/isaac-achievement-switch/>**
+
 ---
 
 ## 前置要求（必须）
@@ -33,7 +35,11 @@
 
 ## 安装
 
-把 `achievement_switch` 整个文件夹放进游戏的 `mods` 目录：
+**方式一：下载成品包（推荐）**
+到 [Releases](https://github.com/jiahuli/isaac-achievement-switch/releases) 下载 `achievement_switch-v*.zip`，解压后把里面的 `achievement_switch` 文件夹整个丢进 `mods` 目录即可。
+
+**方式二：从源码装**
+把仓库里的 `achievement_switch` 文件夹复制进游戏的 `mods` 目录：
 
 ```
 <游戏目录>\mods\achievement_switch\
@@ -52,6 +58,8 @@ G:\SteamLibrary\steamapps\common\The Binding of Isaac Rebirth\mods\achievement_s
 ```powershell
 powershell -ExecutionPolicy Bypass -File tools\install.ps1
 ```
+
+自己打包成品：`python tools/pack.py`（生成 `achievement_switch-v<版本>.zip`，只含 `main.lua` + `metadata.xml`）。
 
 装完后**重启游戏**（mod 只在启动时加载）。
 
