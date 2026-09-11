@@ -75,8 +75,10 @@ if (Test-Path $target) {
     Remove-Item $target -Recurse -Force
 }
 New-Item -ItemType Directory -Path $target | Out-Null
-Copy-Item (Join-Path $source "main.lua")     $target -Force
-Copy-Item (Join-Path $source "metadata.xml") $target -Force
+foreach ($file in @("main.lua", "metadata.xml", "thumb.png")) {
+    $from = Join-Path $source $file
+    if (Test-Path $from) { Copy-Item $from $target -Force }
+}
 
 $rgon = Join-Path $GamePath "Repentogon"
 if (Test-Path $rgon) {
