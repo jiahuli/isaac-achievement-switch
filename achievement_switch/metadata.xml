@@ -11,7 +11,7 @@
 
 开关位置：游戏内按 ~ 打开调试控制台 → 顶部菜单「成就开关」。
 （L 键 Mod Config Menu 里的入口默认隐藏，可在忏悔龙菜单里勾选打开；代码保留。）</description>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<visibility/>
 	<tag id="Lua"/>
 	<tag id="Tweaks"/>
