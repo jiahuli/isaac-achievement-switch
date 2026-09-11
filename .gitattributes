@@ -1,0 +1,8 @@
+# 统一用 LF 提交/检出，保证别人 clone 到的文件和我实测过的字节一致
+# （Lua / XML / HTML / Python 跑 LF 都没问题）
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.zip binary
+*.dat binary

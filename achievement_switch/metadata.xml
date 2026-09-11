@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<name>成就开关 / Achievement Switch</name>
+	<directory>achievement_switch</directory>
+	<description>一个开关，决定「本局是否能解锁成就」。
+关掉之后本局不再解锁成就（含 Steam 成就与解锁类道具），方便在还没全成就的时候安心打一把爽局。
+
+原理：使用游戏原生的「自定义局 / 种子局」标记（Isaac.StartNewGame 的 IsCustomRun），而不是伪造判定。每次都会用引擎接口读回自检；普通 / 困难 / 贪婪 / 困难贪婪都会按原难度重开，不会掉档。
+
+需要 REPENTOGON（忏悔龙）。
+
+开关位置：游戏内按 ~ 打开调试控制台 → 顶部菜单「成就开关」。
+（L 键 Mod Config Menu 里的入口默认隐藏，可在忏悔龙菜单里勾选打开；代码保留。）</description>
+	<version>1.1.0</version>
+	<visibility/>
+	<tag id="Lua"/>
+	<tag id="Tweaks"/>
+</metadata>

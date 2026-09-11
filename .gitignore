@@ -1,0 +1,15 @@
+# 本地工具状态（安全扫描 hook 等），不属于项目
+.mimosa/
+
+# Python
+__pycache__/
+*.pyc
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 游戏运行时会生成的东西（万一有人把仓库放进 mods 目录）
+achievement_switch/data/
+achievement_switch/*.log

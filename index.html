@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>以撒禁用成就 / Achievement Switch — 安装说明</title>
+<meta name="description" content="《以撒的结合：重生 忏悔+》的成就开关 mod：本局解锁成就可以随时开或关。需要忏悔龙 REPENTOGON。">
+<style>
+  :root {
+    --bg: #14161a;
+    --card: #1c1f26;
+    --card2: #22262e;
+    --line: #2f343d;
+    --fg: #e8eaed;
+    --dim: #a2a9b4;
+    --accent: #7fc4a0;
+    --warn: #e2b34a;
+    --code: #0f1114;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.7 -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", Roboto, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: .5px; }
+  header .sub { color: var(--dim); margin: 0 0 4px; }
+  header .tag { color: var(--accent); font-size: 14px; }
+  .notice {
+    margin: 24px 0;
+    padding: 16px 18px;
+    border: 1px solid #4a3d1d;
+    border-left: 4px solid var(--warn);
+    background: #241f14;
+    border-radius: 8px;
+  }
+  .notice h2 { margin: 0 0 8px; font-size: 17px; color: var(--warn); }
+  .notice ul { margin: 8px 0 0; padding-left: 20px; }
+  .notice li { margin: 4px 0; }
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 22px 6px;
+    margin: 18px 0;
+  }
+  h2 { font-size: 20px; margin: 0 0 14px; }
+  h3 { font-size: 16px; margin: 20px 0 8px; color: var(--fg); }
+  p, li { color: #d7dae0; }
+  a { color: var(--accent); }
+  a:hover { color: #a6e0c0; }
+  code {
+    background: var(--code);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 1px 6px;
+    font: 14px/1.5 "Cascadia Mono", Consolas, "Courier New", monospace;
+  }
+  pre {
+    background: var(--code);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font: 13.5px/1.6 "Cascadia Mono", Consolas, "Courier New", monospace;
+    color: #cfd6dd;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--dim); font-weight: 600; }
+  ol, ul { padding-left: 22px; }
+  .btn {
+    display: inline-block;
+    margin: 6px 10px 6px 0;
+    padding: 11px 18px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #10231a;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .btn.alt { background: var(--card2); color: var(--fg); border: 1px solid var(--line); }
+  .muted { color: var(--dim); font-size: 14px; }
+  footer { margin-top: 34px; color: var(--dim); font-size: 14px; text-align: center; }
+  footer a { color: var(--dim); }
+  .kbd {
+    background: var(--card2); border: 1px solid var(--line); border-bottom-width: 2px;
+    border-radius: 5px; padding: 1px 7px; font: 13px/1.5 Consolas, monospace;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>以撒禁用成就</h1>
+  <p class="sub">Achievement Switch — 给《以撒的结合：重生 <strong>忏悔+</strong>》用的成就开关</p>
+  <p class="tag">本局能否解锁成就，由你说了算。想打爽局的时候关掉它就行。</p>
+</header>
+
+<div class="notice">
+  <h2>⚠️ 声明：本项目由 AI 生成，人工审核</h2>
+  <ul>
+    <li>代码、测试、脚本与文档<strong>由 AI 生成</strong>，随后由人工审核，并在真实游戏环境中实测验证。</li>
+    <li>结论只对声明的版本组合负责：<strong>忏悔+ 1.9.7.17 + 忏悔龙 REPENTOGON 1.1.2g</strong>。</li>
+    <li>本 mod <strong>不修改存档、不写内存、不改 Steam 成就状态</strong>；它使用游戏原生的「自定义局 / 种子局」标记，且只作用于本局。</li>
+    <li>仍然建议：动成就之前先备份存档目录 <code>Documents\My Games\Binding of Isaac Repentance+\</code>。</li>
+  </ul>
+</div>
+
+<section>
+  <h2>一、安装前置：忏悔龙 REPENTOGON（必需）</h2>
+  <p>
+    本 mod <strong>必须</strong>配合 <strong>REPENTOGON（忏悔龙）</strong>才能工作 —— 游戏原版没有任何接口能关掉成就，
+    是忏悔龙提供了那个原生开关（<code>Isaac.StartNewGame</code> 的 <code>IsCustomRun</code>）。
+  </p>
+  <p>
+    <a class="btn" href="https://repentogon.com/install.html" target="_blank" rel="noopener">忏悔龙官方安装/下载界面 ↗</a>
+    <a class="btn alt" href="https://github.com/TeamREPENTOGON/Launcher/releases/latest" target="_blank" rel="noopener">直接下载 REPENTOGON Launcher ↗</a>
+  </p>
+  <ol>
+    <li>打开上面的官方安装页，按说明下载 <strong>REPENTOGON Launcher</strong>。</li>
+    <li>用启动器指向你的 <code>isaac-ng.exe</code>，它会自动完成安装与校验（会把游戏降到它支持的 <code>v1.9.7.12.J273</code>）。</li>
+    <li><strong>以后每次都用这个启动器进游戏</strong>（也可以在 Steam 的「启动选项」里指向启动器，一劳永逸）。</li>
+  </ol>
+  <table>
+    <tr><th>还需要什么</th><th>说明</th></tr>
+    <tr><td>以撒的结合：重生 忏悔+</td><td>Steam 版，本体 <code>1.9.7.x</code></td></tr>
+    <tr><td>可选：Mod Config Menu</td><td>想用 <span class="kbd">L</span> 键菜单里的入口时才需要（默认隐藏，可在忏悔龙菜单里打开）</td></tr>
+    <tr><td>不需要</td><td>不需要编译任何东西、不依赖其他 mod、不改游戏本体</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>二、安装本 mod</h2>
+  <p>把 <code>achievement_switch</code> 整个文件夹丢进游戏的 <code>mods</code> 目录：</p>
+  <pre>&lt;游戏目录&gt;\mods\achievement_switch\
+    ├── main.lua
+    └── metadata.xml</pre>
+  <p class="muted">Windows 上通常长这样：<code>G:\SteamLibrary\steamapps\common\The Binding of Isaac Rebirth\mods\achievement_switch\</code></p>
+  <p>如果你下载了完整仓库，也可以直接跑脚本（会自动在常见 Steam 库里找游戏目录）：</p>
+  <pre>powershell -ExecutionPolicy Bypass -File tools\install.ps1</pre>
+  <p><strong>装完后重启游戏</strong> —— mod 只在启动时加载。</p>
+</section>
+
+<section>
+  <h2>三、怎么用</h2>
+  <ol>
+    <li>进游戏后按 <span class="kbd">~</span> 打开调试控制台，顶部菜单栏会出现「<strong>成就开关</strong>」。</li>
+    <li>把「<strong>允许本局解锁成就</strong>」关掉。</li>
+    <li><strong>开一局新的</strong> —— 开局瞬间 mod 会把本局标记为「不解锁成就」。</li>
+    <li>想恢复成就：把开关打开，然后再开一局新的。</li>
+  </ol>
+  <table>
+    <tr><th>菜单里的元素</th><th>作用</th></tr>
+    <tr><td>☑ 允许本局解锁成就</td><td>主开关，关掉 = 本局不解锁成就</td></tr>
+    <tr><td>按钮「关闭成就（不重开…）」</td><td>试试不重开就关掉（本版引擎不行，会给明确提示）</td></tr>
+    <tr><td>按钮「立即重开本局生效」</td><td>以同角色 / 同难度 / 同种子重开本局，必定生效</td></tr>
+    <tr><td>☑ 在 Mod Config Menu（L 键）里显示入口</td><td>默认关闭。想在 <span class="kbd">L</span> 键菜单里也有分类就勾上</td></tr>
+  </table>
+  <p>
+    确认生效的方法：屏幕会弹 <code>ACHIEVEMENTS / DISABLED</code> 提示条，
+    并且 HUD 上出现<strong>划掉的奖杯图标</strong> —— 那是游戏原生的「本局不解锁成就」标志。
+  </p>
+</section>
+
+<section>
+  <h2>四、它到底做了什么（为什么只能这么做）</h2>
+  <p>
+    原版忏悔+ 的成就门控是引擎内部的 <code>Seeds::AchievementUnlocksDisallowed()</code>，Lua 侧只有只读的
+    <code>Seeds:IsCustomRun()</code>，没有一个 setter。真正可用的原生开关只有一个：
+    <strong>「本局是不是自定义局 / 种子局」</strong>（也就是大家说的「种子局拿不到成就」）。
+  </p>
+  <p>所以本 mod 的做法是：把本局重新标记为一个<strong>自定义局</strong> —— 用同一个角色、同一个挑战、同一个难度、同一个种子重开一次，地牢布局和你本来要打的那局一模一样。</p>
+  <ul>
+    <li>自动重开只在 <strong>全新开局的瞬间 + 单人 + 非读档续关</strong> 时发生，一局最多两次，失败就本次游戏内停用并提示。</li>
+    <li><strong>局内手动关开关绝不自动重开</strong>（免得毁掉打到一半的进度），只会提示「下一局生效」，想立刻生效自己点重开按钮。</li>
+    <li>重开后会核对难度 / 挑战有没有被改动，变了会明确告诉你。</li>
+  </ul>
+  <h3>已知限制</h3>
+  <ol>
+    <li>本局一旦成为自定义局就<strong>撤不回来</strong> —— 重新打开成就必须开新的一局。</li>
+    <li>中途关多半不生效，只能重开本局或等下一局。</li>
+    <li>多人 / 协作局不自动重开（重开只能指定一个角色，会破坏队友）。</li>
+    <li>存盘续关的局引擎不保持该标记，续关后本局可能正常解锁成就（mod 会提示，但不会替你重开）。</li>
+    <li>每日挑战是特殊判定，本 mod 不去动它。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>五、排错</h2>
+  <p>日志在 <code>Documents\My Games\Binding of Isaac Repentance+\log.txt</code>，搜 <code>[AchievementSwitch]</code>：</p>
+  <pre>[INFO] - Lua Debug: [AchievementSwitch] 新局开始：允许成就=false 引擎已禁止=false(repentogon) 难度=2-贪婪(property) ... 续关=false 人数=1
+[INFO] - Lua Debug: [AchievementSwitch] 已排队：开局自动重开（第 1 次，等 2 帧后执行）
+[INFO] - Lua Debug: [AchievementSwitch] 通道 B：已要求重开为自定义局（角色=3 挑战=0(property) 难度=2-贪婪(property) 种子=123456789）
+[INFO] - Lua Debug: [AchievementSwitch] 通道 B 成功：重开后本局已被引擎标记为不解锁成就</pre>
+  <ul>
+    <li>看到 <code>通道 B 成功</code> = 成了；<code>难度=</code> 那列可以核对贪婪 / 困难有没有被改。</li>
+    <li>搜不到任何 <code>[AchievementSwitch]</code> = mod 没加载：确认路径是 <code>mods\achievement_switch\main.lua</code>，并在日志里搜 <code>There was an error running the lua file</code>。</li>
+  </ul>
+</section>
+
+<footer>
+  <p>
+    <a href="https://github.com/jiahuli/isaac-achievement-switch">GitHub 仓库</a> ·
+    <a href="https://github.com/jiahuli/isaac-achievement-switch/blob/main/README.md">完整说明</a> ·
+    <a href="https://github.com/jiahuli/isaac-achievement-switch/blob/main/LICENSE">MIT License</a>
+  </p>
+  <p>本页内容由 AI 生成、人工审核。与 Nicalis / Edmund McMillen 及 REPENTOGON 团队无关。</p>
+</footer>
+
+</div>
+</body>
+</html>
