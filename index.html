@@ -101,14 +101,25 @@
 </header>
 
 <div class="notice">
-  <h2>⚠️ 声明：本项目由 AI 生成，人工审核</h2>
+  <h2>⚠️ 声明：本项目由 ChatGPT 生成，人工审核</h2>
   <ul>
-    <li>代码、测试、脚本与文档<strong>由 AI 生成</strong>，随后由人工审核，并在真实游戏环境中实测验证。</li>
+    <li>代码、测试、脚本、文档<strong>以及 mod 缩略图（thumb.png）均由 ChatGPT 生成</strong>，随后由人工审核，并在真实游戏环境中实测验证。</li>
     <li>结论只对声明的版本组合负责：<strong>忏悔+ 1.9.7.17 + 忏悔龙 REPENTOGON 1.1.2g</strong>。</li>
     <li>本 mod <strong>不修改存档、不写内存、不改 Steam 成就状态</strong>；它使用游戏原生的「自定义局 / 种子局」标记，且只作用于本局。</li>
     <li>仍然建议：动成就之前先备份存档目录 <code>Documents\My Games\Binding of Isaac Repentance+\</code>。</li>
+    <li><strong>如有侵权请联系</strong>：本项目的文字、代码或图片若侵犯了你的权益，请在
+      <a href="https://github.com/jiahuli/isaac-achievement-switch/issues" target="_blank" rel="noopener">GitHub Issues</a>
+      留言（或到工坊条目留言），我会立即删除或替换相关内容。</li>
   </ul>
 </div>
+
+<section>
+  <h2>Steam 创意工坊订阅</h2>
+  <p>最省事的安装方式：订阅工坊条目，进游戏在 MODS 里启用即可（仍然必须先装好下面的忏悔龙）。</p>
+  <p>
+    <a class="btn" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3799649030" target="_blank" rel="noopener">🎮 在 Steam 创意工坊订阅 ↗</a>
+  </p>
+</section>
 
 <section>
   <h2>一、安装前置：忏悔龙 REPENTOGON（必需）</h2>
@@ -135,10 +146,14 @@
 
 <section>
   <h2>二、安装本 mod</h2>
-  <p>把 <code>achievement_switch</code> 整个文件夹丢进游戏的 <code>mods</code> 目录：</p>
+  <p><strong>方式零：Steam 创意工坊订阅（最省事）</strong> ——
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3799649030" target="_blank" rel="noopener">点这里订阅 ↗</a>，
+    订阅后进游戏在「MODS」里启用即可（仍然要先装好上面的忏悔龙）。</p>
+  <p>方式一：手动安装 —— 把 <code>achievement_switch</code> 整个文件夹丢进游戏的 <code>mods</code> 目录：</p>
   <pre>&lt;游戏目录&gt;\mods\achievement_switch\
     ├── main.lua
-    └── metadata.xml</pre>
+    ├── metadata.xml
+    └── thumb.png        （创意工坊预览图，带着更完整）</pre>
   <p class="muted">Windows 上通常长这样：<code>G:\SteamLibrary\steamapps\common\The Binding of Isaac Rebirth\mods\achievement_switch\</code></p>
   <p>如果你下载了完整仓库，也可以直接跑脚本（会自动在常见 Steam 库里找游戏目录）：</p>
   <pre>powershell -ExecutionPolicy Bypass -File tools\install.ps1</pre>
@@ -204,11 +219,14 @@
 
 <footer>
   <p>
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3799649030">Steam 创意工坊</a> ·
     <a href="https://github.com/jiahuli/isaac-achievement-switch">GitHub 仓库</a> ·
     <a href="https://github.com/jiahuli/isaac-achievement-switch/blob/main/README.md">完整说明</a> ·
     <a href="https://github.com/jiahuli/isaac-achievement-switch/blob/main/LICENSE">MIT License</a>
   </p>
-  <p>本页内容由 AI 生成、人工审核。与 Nicalis / Edmund McMillen 及 REPENTOGON 团队无关。</p>
+  <p>本页内容与 mod 缩略图由 ChatGPT 生成、人工审核。如有侵权，请在
+     <a href="https://github.com/jiahuli/isaac-achievement-switch/issues">Issues</a> 留言，我会立即删除或替换。</p>
+  <p>与 Nicalis / Edmund McMillen 及 REPENTOGON 团队无关。</p>
 </footer>
 
 </div>

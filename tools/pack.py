@@ -6,8 +6,8 @@
 产物：仓库根目录下的 achievement_switch-v<版本>.zip
       解压后是 achievement_switch/ 文件夹，整个丢进 <游戏>/mods/ 即可。
 
-刻意只打 main.lua 和 metadata.xml：保证不会把开发用的临时文件
-（.mimosa 扫描状态、日志、data 等）混进发布包里。
+刻意只打 mod 自己需要的文件（main.lua / metadata.xml / thumb.png）：
+保证不会把开发用的临时文件（.mimosa 扫描状态、日志、data 等）混进发布包里。
 """
 import os
 import pathlib
@@ -16,7 +16,7 @@ import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MOD_DIR = ROOT / "achievement_switch"
-PAYLOAD = ("main.lua", "metadata.xml")
+PAYLOAD = ("main.lua", "metadata.xml", "thumb.png")
 
 
 def read_version() -> str:
