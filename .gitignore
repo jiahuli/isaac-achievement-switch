@@ -13,3 +13,6 @@ __pycache__/
 # 游戏运行时会生成的东西（万一有人把仓库放进 mods 目录）
 achievement_switch/data/
 achievement_switch/*.log
+
+# 打包产物（发布时作为 Release 附件，不进仓库）
+/achievement_switch-v*.zip
